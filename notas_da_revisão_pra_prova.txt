@@ -1,0 +1,7 @@
+20 questões
+-tipos de rede(distância)
+-camadas
+-estado da porta
+-
+-
+-
