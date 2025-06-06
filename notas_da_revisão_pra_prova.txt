@@ -1,7 +1,22 @@
-20 questões
+25 questões
 -tipos de rede(distância)
 -camadas
 -estado da porta
 -
 -
 -
+
+
+(udp.)bind associa uma porta/um host a um processo, com exclusividade
+
+port(porta) tranalha com o servidor
+
+tcp aceita uma porta por vez. deixando as outras em uma lista de espera
+udp aceita multiplas
+
+quando cliente é utp ele recebe sock_Stream
+-recebe e envia
+quando cliente é udp ele recebe spcl_dgram
+-cliente só envia
+
+alguma tipo de sigla de 3 letras
