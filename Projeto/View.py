@@ -1,5 +1,4 @@
 import socket
-import platform
 import psutil
 import shutil
 
