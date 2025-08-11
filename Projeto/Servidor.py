@@ -1,19 +1,20 @@
 import socket
+import platform
+import psutil
+import shutil
 
-# Cria socket TCP
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+try:
+    serveridor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    serveridor.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    serveridor.bind(("0.0.0.0", 5005))
+    serveridor.listen()
 
-# Liga ao IP e porta
-server.bind(("0.0.0.0", 5005))
-server.listen()
+    while True:
+        conn, addr = serveridor.accept()
+        print(f"\nConexão de {addr}")
 
-print("Servidor pronto para receber dados...")
-
-while True:
-    conn, addr = server.accept()
-    print(f"\nConexão de {addr}")
-
-    dados = conn.recv(2048).decode()
-    print("Dados recebidos:", dados)
-
+        data = serveridor.recvfrom(1024).decode()
+        print("Dados recebidos:", data)
+except KeyboardInterrupt:
+    print("Fechando...")
     conn.close()
